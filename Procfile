@@ -1,0 +1,1 @@
+web: gunicorne dental.wsgi
