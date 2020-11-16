@@ -1,6 +1,5 @@
 
 import os
-from pathlib import Path
 import django_heroku
 import dj_database_url
 from decouple import config
@@ -119,6 +118,7 @@ STATICFILES_DIRS=[
             os.path.join(BASE_DIR,'static'),
 ]
 
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 '''
 
 EMAIL_HOST="smtp.yahoo.com"
@@ -129,6 +129,6 @@ EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
 '''
 
-STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 django_heroku.settings(locals())
